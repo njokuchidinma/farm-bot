@@ -16,8 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+TITLE="FARM BOT Webapp",
+DESCRIPTION="This is the webapp api for the farmbot. It gives rights to changes for staffs and full rights to admin.",
+schema_view = get_schema_view(
+    openapi.Info(
+        title=TITLE,
+        default_version='v1',
+        description=DESCRIPTION,
+        terms_of_service="https://farm-bot.netlify.app/terms/",
+        contact=openapi.Contact(email="contact@farmbot.local"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
+    path('redoc/', schema_view.with_ui('redoc'), name="swagger"),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
