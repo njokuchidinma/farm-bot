@@ -14,6 +14,9 @@ RUN pip install django
 RUN pip install djangorestframework
 RUN pip install drf-yasg
 RUN pip install django-filter==2.4.0
+RUN pip install django-countries
+RUN pip install requests
+RUN pip install django-notifications-hq
 RUN pip install openai
 RUN pip install gunicorn
 
