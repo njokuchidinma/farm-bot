@@ -14,7 +14,7 @@ RUN pip install --upgrade pip
 # RUN pip install djangorestframework
 RUN pip install gunicorn
 
-# RUN pip install -r /app/requirements.txt
+RUN pip install -r /app/requirements.txt
 # RUN python manage.py makemigrations 
 # RUN python /app/manage.py migrate
 RUN python /app/manage.py collectstatic
