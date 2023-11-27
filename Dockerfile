@@ -12,7 +12,7 @@ RUN apt update -y
 RUN pip install --upgrade pip
 RUN pip install django
 RUN pip install djangorestframework
-RUN pip install -r /app/requirements.txt
+RUN pip install drf-yasg
 RUN pip install gunicorn
 
 EXPOSE 8000
