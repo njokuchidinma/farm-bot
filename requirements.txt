@@ -1,5 +1,8 @@
-Django==3.2.7
-djangorestframework==3.12.4
+# Django==3.2.7
+# djangorestframework==3.12.4
 drf-yasg==1.20.0
 django-filters==2.4.0
 django-notifications-hq==1.7.0
+
+
+# RUN pip install -r /app/requirements.txt
